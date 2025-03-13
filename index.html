@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reena Bharath - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="photography.html">Photography</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://github.com/ReenaBharath" target="_blank" rel="noopener noreferrer" title="GitHub Profile"><i class="fab fa-github"></i><span class="sr-only">GitHub</span></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram Profile"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="title">Full Stack Developer &<br>Project Administrator</h1>
+                        <p class="description">
+                            Hey 👋🏽 I'm Reena Bharath, a tech enthusiast based in Prague. I combine
+                            development expertise with project management skills to create
+                            efficient digital solutions.
+                        </p>
+                        <button class="cta-button" onclick="scrollToSection('projects')">View Projects</button>
+                        <button class="cta-button secondary" onclick="scrollToSection('contact')">Contact Me</button>
+                        <a href="Reena Resume_2024.pdf" class="cta-button download" download><i class="fas fa-download"></i> Download CV</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/profile.jpg" alt="Reena Bharath">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/SAP_HANA.png" alt="SAP HANA Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>SAP HANA Database Management</h3>
+                            <p>Implemented a comprehensive database solution using SAP HANA for a large enterprise client, optimizing data retrieval and storage processes.</p>
+                            <div class="tags">
+                                <span class="tag">SAP HANA</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">Database</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/quiz.png" alt="Quiz Game App">
+                        </div>
+                        <div class="project-content">
+                            <h3>Quiz Game</h3>
+                            <p>An interactive quiz application with multiple categories and difficulty levels, featuring a responsive design and real-time scoring.</p>
+                            <div class="tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/math_practicer.png" alt="Math Practicer App">
+                        </div>
+                        <div class="project-content">
+                            <h3>Math Practicer</h3>
+                            <p>Educational app designed to help students practice various math concepts through interactive exercises and challenges.</p>
+                            <div class="tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/ML.png" alt="ML Data Cleaning Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>Machine Learning using ML</h3>
+                            <p>Developed a machine learning model for predictive analytics, incorporating data cleaning and preprocessing techniques for improved accuracy.</p>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">Data Science</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/daskalos.png" alt="Daskalos Learning Platform">
+                        </div>
+                        <div class="project-content">
+                            <h3>Daskalos</h3>
+                            <p>A comprehensive e-learning platform with course management, student progress tracking, and interactive learning materials.</p>
+                            <div class="tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/cryptography.png" alt="Cryptography Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>Cryptography</h3>
+                            <p>Implemented various cryptographic algorithms for secure data transmission and storage, with a focus on performance and security.</p>
+                            <div class="tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Cryptography</span>
+                                <span class="tag">Security</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/sudoko.png" alt="Sudoku Solver">
+                        </div>
+                        <div class="project-content">
+                            <h3>Sudoku Solver</h3>
+                            <p>An algorithm that solves Sudoku puzzles of varying difficulty levels using backtracking and constraint satisfaction techniques.</p>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Algorithms</span>
+                                <span class="tag">Problem Solving</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/finance.png" alt="Finance Accounting Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>Finance Accounting</h3>
+                            <p>A financial management system for tracking expenses, generating reports, and providing insights into spending patterns.</p>
+                            <div class="tags">
+                                <span class="tag">PHP</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Chart.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/projects/database.jpg" alt="Database Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>Database Project Oracle SQL</h3>
+                            <p>Designed and implemented a complex database schema for a retail management system using Oracle SQL, including stored procedures and triggers.</p>
+                            <div class="tags">
+                                <span class="tag">Oracle SQL</span>
+                                <span class="tag">Database Design</span>
+                                <span class="tag">PL/SQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section id="technologies" class="technologies-section">
+            <div class="container">
+                <h2 class="section-title">Technologies</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fab fa-html5"></i></div>
+                        <h3 class="tech-name">HTML5</h3>
+                        <div class="tech-level">
+                            <div class="tech-level-bar" data-level="95"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3 class="tech-name">CSS3</h3>
+                        <div class="tech-level">
+                            <div class="tech-level-bar" data-level="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fab fa-js"></i></div>
+                        <h3 class="tech-name">JavaScript</h3>
+                        <div class="tech-level">
+                            <div class="tech-level-bar" data-level="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fab fa-react"></i></div>
+                        <h3 class="tech-name">React</h3>
+                        <div class="tech-level">
+                            <div class="tech-level-bar" data-level="80"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+                        <h3 class="tech-name">Node.js</h3>
+                        <div class="tech-level">
+                            <div class="tech-level-bar" data-level="75"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fab fa-python"></i></div>
+                        <h3 class="tech-name">Python</h3>
+                        <div class="tech-level">
+                            <div class="tech-level-bar" data-level="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-database"></i></div>
+                        <h3 class="tech-name">SQL</h3>
+                        <div class="tech-level">
+                            <div class="tech-level-bar" data-level="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fab fa-aws"></i></div>
+                        <h3 class="tech-name">AWS</h3>
+                        <div class="tech-level">
+                            <div class="tech-level-bar" data-level="70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="service-title">Website Creation</h3>
+                        <p class="service-description">
+                            Custom website development tailored to your specific needs, from simple landing pages to complex web applications.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="service-title">Data Science Projects</h3>
+                        <p class="service-description">
+                            Data analysis, visualization, and machine learning solutions to help you extract valuable insights from your data.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="service-title">Database Projects</h3>
+                        <p class="service-description">
+                            Database design, optimization, and management services to ensure efficient data storage and retrieval.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3 class="service-title">Event Photography</h3>
+                        <p class="service-description">
+                            Professional photography services for events in Prague, capturing your special moments with creativity and attention to detail.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/profile.jpg" alt="Reena Bharath">
+                    </div>
+                    <div class="about-text">
+                        <p>I'm a passionate Full Stack Developer and Project Administrator with experience in building responsive and performant web applications. My journey in tech started with a fascination for solving problems and creating user-friendly experiences.</p>
+                        <p>With a background in computer science and project management, I bring a unique perspective to every project I work on. I'm constantly learning and exploring new technologies to stay at the forefront of the industry.</p>
+                        <p>When I'm not coding, you can find me exploring Prague with my camera, capturing the city's beautiful architecture and vibrant scenes.</p>
+                        <div class="about-links">
+                            <a href="#contact" class="about-link">Contact Me</a>
+                            <a href="photography.html" class="about-link">View Photography</a>
+                            <a href="Reena Resume_2024.pdf" class="about-link download-cv" download><i class="fas fa-download"></i> Download CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>reenabharath1581@gmail.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Prague, Czech Republic</p>
+                        </div>
+                        <div class="contact-social">
+                            <a href="https://github.com/ReenaBharath" target="_blank" rel="noopener noreferrer" title="GitHub Profile"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/reena-bharath-1b59481b8" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://instagram.com/15_reena_81" target="_blank" rel="noopener noreferrer" title="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Portfolio</div>
+                    <p class="footer-description">Full Stack Developer & Project Administrator based in Prague, specializing in creating efficient digital solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <div class="horizontal-links">
+                        <a href="#home">Home</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#technologies">Technologies</a>
+                        <a href="#services">Services</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                        <a href="photography.html">Photography</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Me</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/ReenaBharath" target="_blank" rel="noopener noreferrer" title="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/reena-bharath-1b59481b8" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com/15_reena_81" target="_blank" rel="noopener noreferrer" title="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reena Bharath. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
