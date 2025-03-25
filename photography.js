@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Load all photographs dynamically
+    loadAllPhotographs();
+    
     // Initialize gallery filtering
     initGalleryFilter();
     
@@ -16,6 +19,105 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize animations
     initAnimations();
 });
+
+// Dynamically load all photographs
+function loadAllPhotographs() {
+    // This is a list of all photograph categories
+    const categories = ['architecture', 'street', 'nature', 'events'];
+    
+    // Get the gallery grid container
+    const galleryGrid = document.querySelector('.gallery-grid');
+    
+    // Clear any existing content
+    if (galleryGrid) {
+        // Keep track of which images we've already added
+        const addedImages = new Set();
+        
+        // First, get all the existing images from the HTML
+        const existingItems = galleryGrid.querySelectorAll('.gallery-item img');
+        existingItems.forEach(img => {
+            const src = img.getAttribute('src');
+            if (src) {
+                const filename = src.split('/').pop();
+                addedImages.add(filename);
+            }
+        });
+        
+        // Define a list of all image filenames in the Photography directory
+        // This is a comprehensive list of all your images
+        const allPhotos = [
+            'A.jpg', 'B.jpg', 'C.jpg', 'E.jpg', 'F.jpg', 'G.jpg', 'H.jpg', 'I.jpg', 'J.jpg', 'K.jpg', 'L.jpg',
+            'M.jpg', 'N.jpg', 'O.jpg', 'P.jpg', 'R.jpg', 'S.jpg', 'T.jpg', 'U.jpg', 'V.jpg', 'W.jpg', 'X.jpg',
+            'Y.jpg', 'Z.jpg', 'AA.jpg', 'AB.jpg', 'AC.jpg', 'AE.jpg', 'AF.jpg', 'AG.jpg', 'AH.jpg', 'AI.jpg',
+            'AJ.jpg', 'AK.jpg', 'AL.jpg', 'AM.jpg', 'AN.jpg', 'AO.jpg', 'AP.jpg', 'AQ.jpg', 'AR.jpg', 'AS.jpg',
+            'AT.jpg', 'AU.jpg', 'AV.jpg', 'AW.jpg', 'AX.jpg', 'AY.jpg', 'AZ.jpg', 'BA.jpg', 'BB.jpg', 'BC.jpg',
+            'BD.jpg', 'BF.jpg', 'BG.jpg', 'BH.jpg', 'BI.jpg', 'BK.jpg', 'BL.jpg', 'BM.jpg', 'BN.jpg', 'BO.jpg',
+            'BP.jpg', 'BR.jpg', 'BS.jpg', 'BT.jpg', 'BU.jpg', 'BV.jpg', 'BW.jpg', 'BX.jpg', 'BY.jpg', 'BZ.jpg',
+            'CA.jpg', 'CB.jpg', 'CC.jpg', 'CD.jpg', 'CE.jpg', 'CF.jpg', 'CG.jpg', 'CH.jpg', 'CI.jpg', 'CJ.jpg',
+            'CK.jpg', 'CL.jpg', 'CM.jpg', 'CN.jpg', 'CO.jpg', 'CP.jpg', 'CQ.jpg', 'CR.jpg', 'CS.jpg', 'CT.jpg',
+            'CU.jpg', 'CV.jpg', 'CW.jpg', 'CX.jpg', 'CY.jpg', 'CZ.jpg', 'DA.jpg', 'DB.jpg', 'DC.jpg', 'DD.jpg',
+            'DE.jpg', 'DF.jpg', 'DG.jpg', 'DI.jpg', 'DJ.jpg', 'DK.jpg', 'DL.jpg', 'DM.jpg', 'DN.jpg', 'DO.jpg',
+            'DP.jpg', 'DQ.jpg', 'DR.jpg', 'DS.jpg', 'DT.jpg', 'DU.jpg', 'DV.jpg', 'DW.jpg', 'DX.jpg', 'DY.jpg',
+            'DZ.jpg', 'EA.jpg', 'EB.jpg', 'P1013437.jpg', 'P1013440.jpg', 'P1013441.jpg', 'P1013442.jpg',
+            'P1013443.jpg', 'P1013444.jpg', 'P1013445.jpg', 'P1013446.jpg', 'P1013448.jpg', 'P1013453.jpg',
+            'P1013454.jpg', 'P1013456.jpg', 'P1013462.jpg', 'P1013463.jpg', 'P1013465.jpg', 'P1013467.jpg',
+            'P1013468.jpg', 'P1013473.jpg', 'P1013474.jpg', 'P1013478.jpg', 'P1013481.jpg', 'P1013483.jpg',
+            'P1013489.jpg', 'P1013493.jpg', 'P1013494.jpg', 'P1013495.jpg', 'P1013497.jpg', 'P1013500.jpg',
+            'P1013501.jpg', 'P1013502.jpg', 'P1013506.jpg', 'P1013508.jpg', 'P1013512.jpg', 'P1013515.jpg',
+            'P1013516.jpg', 'P1153386.jpg', 'P1153387.jpg', 'IMG20230820151515.jpg', 'AAV.jpg', 'NQ.jpg', 'RC.jpg'
+        ];
+        
+        // Add any photos that aren't already in the gallery
+        allPhotos.forEach((photo, index) => {
+            // Skip if we've already added this image
+            if (addedImages.has(photo)) {
+                return;
+            }
+            
+            // Determine which category this image belongs to
+            // We'll use a simple pattern: distribute evenly across categories
+            const categoryIndex = index % categories.length;
+            const category = categories[categoryIndex];
+            
+            // Create a title from the filename
+            let title = photo.replace('.jpg', '').replace(/([A-Z])/g, ' $1').trim();
+            if (title.startsWith('P')) {
+                title = 'Photo ' + title.substring(1);
+            }
+            
+            // Create the gallery item
+            const galleryItem = document.createElement('div');
+            galleryItem.className = `gallery-item ${category}`;
+            
+            // Create the image element
+            const img = document.createElement('img');
+            img.src = `images/Photography/${photo}`;
+            img.alt = title;
+            img.loading = 'lazy';
+            
+            // Create the overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'gallery-item-overlay';
+            
+            // Create the title
+            const titleElement = document.createElement('h3');
+            titleElement.className = 'gallery-item-title';
+            titleElement.textContent = title;
+            
+            // Create the location
+            const location = document.createElement('p');
+            location.className = 'gallery-item-location';
+            location.innerHTML = '<i class="fas fa-map-marker-alt"></i> Prague, Czech Republic';
+            
+            // Add everything to the DOM
+            overlay.appendChild(titleElement);
+            overlay.appendChild(location);
+            galleryItem.appendChild(img);
+            galleryItem.appendChild(overlay);
+            galleryGrid.appendChild(galleryItem);
+        });
+    }
+}
 
 // Gallery filtering functionality
 function initGalleryFilter() {
