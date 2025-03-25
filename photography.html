@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reena Bharath - Photography</title>
+    <title>Reena Bharath - Professional Photography Portfolio | Prague</title>
+    <meta name="description" content="Explore Reena Bharath's photography portfolio featuring architecture, street, portrait, and event photography from Prague and around the world.">
+    <meta name="keywords" content="Reena Bharath, Photography, Prague Photographer, Architecture Photography, Street Photography, Portrait Photography, Event Photography">
+    <meta name="author" content="Reena Bharath">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Reena Bharath - Professional Photography Portfolio">
+    <meta property="og:description" content="Explore stunning photography featuring architecture, street scenes, portraits, and events from Prague and beyond.">
+    <meta property="og:image" content="images/Photography/A.jpg">
+    <meta property="og:url" content="https://reenabharath.com/photography.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reena Bharath - Professional Photography Portfolio">
+    <meta name="twitter:description" content="Explore stunning photography featuring architecture, street scenes, portraits, and events from Prague and beyond.">
+    <meta name="twitter:image" content="images/Photography/A.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://reenabharath.com/photography.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -82,6 +105,7 @@
             box-shadow: var(--shadow-primary);
             cursor: pointer;
             transition: transform 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.1); /* Placeholder background while loading */
         }
 
         .gallery-item:hover {
@@ -150,7 +174,10 @@
         .lightbox-content {
             position: relative;
             max-width: 90%;
-            max-height: 80vh;
+            max-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .lightbox-img {
@@ -204,10 +231,35 @@
             font-size: 1.5rem;
             cursor: pointer;
             transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .lightbox-nav button:hover {
             background: var(--color-primary);
+        }
+
+        /* Loading indicator for lightbox */
+        .loading-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--color-primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* Photography Services Section */
@@ -374,42 +426,42 @@
             <div class="gallery-grid">
                 <!-- Architecture Photos -->
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/A.jpg" alt="Prague Architecture">
+                    <img src="images/Photography/A.jpg" alt="Prague Architecture" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Prague Architecture</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/B.jpg" alt="Historic Building">
+                    <img src="images/Photography/B.jpg" alt="Historic Building" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Historic Building</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/C.jpg" alt="Old Town Architecture">
+                    <img src="images/Photography/C.jpg" alt="Old Town Architecture" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Old Town Architecture</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/E.jpg" alt="Modern Building">
+                    <img src="images/Photography/E.jpg" alt="Modern Building" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Modern Building</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/F.jpg" alt="Classic Architecture">
+                    <img src="images/Photography/F.jpg" alt="Classic Architecture" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Classic Architecture</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/P1013437.jpg" alt="Architectural Detail">
+                    <img src="images/Photography/P1013437.jpg" alt="Architectural Detail" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Architectural Detail</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
@@ -418,42 +470,42 @@
 
                 <!-- Street Photos -->
                 <div class="gallery-item street">
-                    <img src="images/Photography/G.jpg" alt="Prague Street Life">
+                    <img src="images/Photography/G.jpg" alt="Prague Street Life" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Prague Street Life</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/H.jpg" alt="Urban Scene">
+                    <img src="images/Photography/H.jpg" alt="Urban Scene" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Urban Scene</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/I.jpg" alt="City Vibes">
+                    <img src="images/Photography/I.jpg" alt="City Vibes" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">City Vibes</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/J.jpg" alt="Street Corner">
+                    <img src="images/Photography/J.jpg" alt="Street Corner" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Street Corner</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/K.jpg" alt="Urban Landscape">
+                    <img src="images/Photography/K.jpg" alt="Urban Landscape" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Urban Landscape</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/L.jpg" alt="City Streets">
+                    <img src="images/Photography/L.jpg" alt="City Streets" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">City Streets</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
@@ -462,42 +514,42 @@
 
                 <!-- Nature Photos -->
                 <div class="gallery-item nature">
-                    <img src="images/Photography/M.jpg" alt="Prague Parks">
+                    <img src="images/Photography/M.jpg" alt="Prague Parks" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Prague Parks</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/N.jpg" alt="Natural Beauty">
+                    <img src="images/Photography/N.jpg" alt="Natural Beauty" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Natural Beauty</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/O.jpg" alt="Green Spaces">
+                    <img src="images/Photography/O.jpg" alt="Green Spaces" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Green Spaces</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/P.jpg" alt="Riverside View">
+                    <img src="images/Photography/P.jpg" alt="Riverside View" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Riverside View</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/P1013440.jpg" alt="Scenic Landscape">
+                    <img src="images/Photography/P1013440.jpg" alt="Scenic Landscape" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Scenic Landscape</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/R.jpg" alt="Park View">
+                    <img src="images/Photography/R.jpg" alt="Park View" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Park View</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
@@ -506,42 +558,42 @@
 
                 <!-- Events Photos -->
                 <div class="gallery-item events">
-                    <img src="images/Photography/S.jpg" alt="Prague Events">
+                    <img src="images/Photography/S.jpg" alt="Prague Events" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Prague Events</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/T.jpg" alt="Cultural Celebration">
+                    <img src="images/Photography/T.jpg" alt="Cultural Celebration" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Cultural Celebration</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/U.jpg" alt="Festival Moments">
+                    <img src="images/Photography/U.jpg" alt="Festival Moments" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Festival Moments</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/V.jpg" alt="Public Gathering">
+                    <img src="images/Photography/V.jpg" alt="Public Gathering" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Public Gathering</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/W.jpg" alt="Event Photography">
+                    <img src="images/Photography/W.jpg" alt="Event Photography" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Event Photography</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/X.jpg" alt="Special Occasion">
+                    <img src="images/Photography/X.jpg" alt="Special Occasion" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Special Occasion</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
@@ -550,56 +602,56 @@
 
                 <!-- Additional Mixed Photos -->
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/Y.jpg" alt="Architectural Wonder">
+                    <img src="images/Photography/Y.jpg" alt="Architectural Wonder" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Architectural Wonder</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/Z.jpg" alt="Street Photography">
+                    <img src="images/Photography/Z.jpg" alt="Street Photography" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Street Photography</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/AA.jpg" alt="Natural Scene">
+                    <img src="images/Photography/AA.jpg" alt="Natural Scene" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Natural Scene</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/AB.jpg" alt="Event Highlights">
+                    <img src="images/Photography/AB.jpg" alt="Event Highlights" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Event Highlights</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/AC.jpg" alt="Building Design">
+                    <img src="images/Photography/AC.jpg" alt="Building Design" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Building Design</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/AE.jpg" alt="Urban Photography">
+                    <img src="images/Photography/AE.jpg" alt="Urban Photography" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Urban Photography</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/AF.jpg" alt="Nature View">
+                    <img src="images/Photography/AF.jpg" alt="Nature View" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Nature View</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/AG.jpg" alt="Celebration Moment">
+                    <img src="images/Photography/AG.jpg" alt="Celebration Moment" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Celebration Moment</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
@@ -608,63 +660,63 @@
                 
                 <!-- More Photos -->
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/AH.jpg" alt="Building Detail">
+                    <img src="images/Photography/AH.jpg" alt="Building Detail" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Building Detail</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/AI.jpg" alt="Street Scene">
+                    <img src="images/Photography/AI.jpg" alt="Street Scene" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Street Scene</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/AJ.jpg" alt="Natural Beauty">
+                    <img src="images/Photography/AJ.jpg" alt="Natural Beauty" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Natural Beauty</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/AK.jpg" alt="Event Capture">
+                    <img src="images/Photography/AK.jpg" alt="Event Capture" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Event Capture</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/AL.jpg" alt="Architecture Study">
+                    <img src="images/Photography/AL.jpg" alt="Architecture Study" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Architecture Study</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/AM.jpg" alt="Urban Life">
+                    <img src="images/Photography/AM.jpg" alt="Urban Life" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Urban Life</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/AN.jpg" alt="Nature Detail">
+                    <img src="images/Photography/AN.jpg" alt="Nature Detail" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Nature Detail</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/AV.jpg" alt="Nature Study">
+                    <img src="images/Photography/AV.jpg" alt="Nature Study" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Nature Study</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/AO.jpg" alt="Special Event">
+                    <img src="images/Photography/AO.jpg" alt="Special Event" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Special Event</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
@@ -673,49 +725,49 @@
                 
                 <!-- Even More Photos -->
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/AP.jpg" alt="Historic Architecture">
+                    <img src="images/Photography/AP.jpg" alt="Historic Architecture" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Historic Architecture</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/AQ.jpg" alt="Street Photography">
+                    <img src="images/Photography/AQ.jpg" alt="Street Photography" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Street Photography</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item nature">
-                    <img src="images/Photography/AR.jpg" alt="Natural Landscape">
+                    <img src="images/Photography/AR.jpg" alt="Natural Landscape" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Natural Landscape</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/AS.jpg" alt="Event Moment">
+                    <img src="images/Photography/AS.jpg" alt="Event Moment" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Event Moment</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item architecture">
-                    <img src="images/Photography/AT.jpg" alt="Building Study">
+                    <img src="images/Photography/AT.jpg" alt="Building Study" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Building Study</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item street">
-                    <img src="images/Photography/AU.jpg" alt="Urban Detail">
+                    <img src="images/Photography/AU.jpg" alt="Urban Detail" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Urban Detail</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="images/Photography/AW.jpg" alt="Celebration">
+                    <img src="images/Photography/AW.jpg" alt="Celebration" loading="lazy">
                     <div class="gallery-item-overlay">
                         <h3 class="gallery-item-title">Celebration</h3>
                         <p class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Prague, Czech Republic</p>
@@ -832,6 +884,9 @@
             <div class="lightbox-nav">
                 <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
                 <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="loading-indicator">
+                <div class="spinner"></div>
             </div>
         </div>
     </div>
@@ -991,6 +1046,29 @@
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset();
         });
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PhotographyBusiness",
+      "name": "Reena Bharath Photography",
+      "image": "images/Photography/A.jpg",
+      "url": "https://reenabharath.com/photography.html",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Prague",
+        "addressCountry": "Czech Republic"
+      },
+      "telephone": "+420 123 456 789",
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.flickr.com/photos/201096688@N04",
+        "https://github.com/ReenaBharath",
+        "https://www.twitch.tv/babyshark21298",
+        "https://discord.gg/3QRdRBf2rp",
+        "https://www.buymeacoffee.com/reenabharath"
+      ]
+    }
     </script>
 </body>
 </html>

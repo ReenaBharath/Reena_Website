@@ -66,6 +66,17 @@ function initLightbox() {
     
     if (galleryItems.length === 0) return;
     
+    // Preload images for faster display
+    const preloadImages = () => {
+        galleryItems.forEach(item => {
+            const img = new Image();
+            img.src = item.src;
+        });
+    };
+    
+    // Call preload function
+    preloadImages();
+    
     galleryItems.forEach(item => {
         item.addEventListener('click', () => {
             // Create lightbox elements
@@ -76,6 +87,24 @@ function initLightbox() {
             lightboxContent.className = 'lightbox-content';
             
             const lightboxImg = document.createElement('img');
+            lightboxImg.className = 'lightbox-img';
+            
+            // Start loading indicator
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'loading-indicator';
+            loadingIndicator.innerHTML = '<div class="spinner"></div>';
+            lightboxContent.appendChild(loadingIndicator);
+            
+            // Set up image loading
+            lightboxImg.onload = function() {
+                // Remove loading indicator once image is loaded
+                if (lightboxContent.contains(loadingIndicator)) {
+                    lightboxContent.removeChild(loadingIndicator);
+                }
+                lightboxContent.appendChild(lightboxImg);
+            };
+            
+            // Set image source after setting up onload handler
             lightboxImg.src = item.src;
             
             const closeBtn = document.createElement('span');
@@ -83,7 +112,6 @@ function initLightbox() {
             closeBtn.innerHTML = '&times;';
             
             // Add elements to DOM
-            lightboxContent.appendChild(lightboxImg);
             lightboxContent.appendChild(closeBtn);
             lightbox.appendChild(lightboxContent);
             body.appendChild(lightbox);
