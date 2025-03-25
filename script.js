@@ -132,7 +132,9 @@ function animateOnScroll() {
 
 // Contact form validation and submission
 function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('form-status');
+    
     if (!contactForm) return;
     
     contactForm.addEventListener('submit', function(e) {
@@ -141,6 +143,7 @@ function initContactForm() {
         // Basic validation
         const name = document.getElementById('name');
         const email = document.getElementById('email');
+        const subject = document.getElementById('subject');
         const message = document.getElementById('message');
         let isValid = true;
         
@@ -158,6 +161,13 @@ function initContactForm() {
             removeError(email);
         }
         
+        if (!subject.value.trim()) {
+            highlightError(subject);
+            isValid = false;
+        } else {
+            removeError(subject);
+        }
+        
         if (!message.value.trim()) {
             highlightError(message);
             isValid = false;
@@ -166,26 +176,55 @@ function initContactForm() {
         }
         
         if (isValid) {
-            // In a real application, you would send the form data to a server
-            // For now, we'll just show a success message
-            const formElements = contactForm.elements;
-            for (let i = 0; i < formElements.length; i++) {
-                formElements[i].disabled = true;
-            }
+            // Show loading status
+            formStatus.innerHTML = '<p class="sending">Sending message...</p>';
             
-            const successMessage = document.createElement('div');
-            successMessage.className = 'success-message';
-            successMessage.textContent = 'Thank you for your message! I will get back to you soon.';
-            contactForm.appendChild(successMessage);
+            // Disable the submit button during submission
+            const submitButton = contactForm.querySelector('.submit-button');
+            submitButton.disabled = true;
             
-            // Reset the form after 3 seconds
-            setTimeout(() => {
-                contactForm.reset();
-                successMessage.remove();
-                for (let i = 0; i < formElements.length; i++) {
-                    formElements[i].disabled = false;
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Send the form data to Formspree
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
                 }
-            }, 3000);
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .then(data => {
+                // Show success message
+                formStatus.innerHTML = '<p class="success-message">Thank you! Your message has been sent.</p>';
+                
+                // Reset the form
+                contactForm.reset();
+                
+                // Re-enable the submit button
+                submitButton.disabled = false;
+                
+                // Clear the success message after 5 seconds
+                setTimeout(function() {
+                    formStatus.innerHTML = '';
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                
+                // Show error message
+                formStatus.innerHTML = '<p class="error-message">Sorry, there was a problem sending your message. Please email me directly at reenabharath1581@gmail.com</p>';
+                
+                // Re-enable the submit button
+                submitButton.disabled = false;
+            });
         }
     });
 }
